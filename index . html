@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Te amo azul</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #e0ccff, #f9eaff);
+      font-family: 'Segoe UI', sans-serif;
+      color: #5c2d91;
+      text-align: center;
+      overflow: hidden;
+    }
+    h1 {
+      font-size: 3em;
+      margin-top: 60px;
+      text-shadow: 2px 2px 4px #c79efc;
+    }
+    .corazones {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+    .corazon {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      background: url('https://i.imgur.com/Lx6oP4B.png') no-repeat center center;
+      background-size: contain;
+      animation: flotar 6s linear infinite;
+    }
+    @keyframes flotar {
+      0% {
+        transform: translateY(100vh);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh);
+        opacity: 0;
+      }
+    }
+    audio {
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Te amo azul 💜</h1>
+  <audio controls autoplay loop>
+    <source src="https://dl.sndup.net/3z7p/A%20Thousand%20Years%20-%20Christina%20Perri.mp3" type="audio/mp3">
+    Tu navegador no soporta audio HTML5.
+  </audio>
+  <div class="corazones" id="corazones"></div>
+
+  <script>
+    function crearCorazon() {
+      const corazon = document.createElement("div");
+      corazon.className = "corazon";
+      corazon.style.left = Math.random() * 100 + "vw";
+      corazon.style.animationDuration = (Math.random() * 3 + 3) + "s";
+      document.get
